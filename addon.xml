@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.video.jumptoshow" version="1.0.0" name="JumpToShow" provider-name="RickDB">
+  <requires>
+    <import addon="xbmc.python" version="2.24.0"/>
+  </requires>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Jump directly to tv show</summary>
+    <description lang="en"></description>
+    <disclaimer lang="en"></disclaimer>
+  </extension>
+  <extension point="xbmc.python.pluginsource" library="jumptoshow.py">
+    <provides>video</provides>
+  </extension>
+  
+  <extension point="kodi.context.item">
+    <menu id="kodi.core.main">
+      <item library="jumptoshow.py">
+        <label>Jump to show</label>
+        <visible>!IsEmpty(ListItem.TVShowTitle)</visible>
+      </item>
+    </menu>
+  </extension>
+</addon>
